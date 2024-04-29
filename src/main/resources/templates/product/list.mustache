@@ -3,7 +3,7 @@
 <!--메인 시작-->
 <div id="container">
     <section class="section1 main_sc1 cf">
-        <!--section1 메인이미지-->
+        <!--section1 메인이미지 이부분은 슬라이더 보여지는 부분이라 프로그래밍 안들어가는 부분입니다.-->
         <div class="section1-img">
             <div class="section1-img1 mv" style="width: 1000vh !important;"><img src="/images/main_3.png">
                 <!-- <div class="cover"></div> -->
@@ -16,8 +16,9 @@
             </div>
         </div>
         <!--section1 메인이미지-->
+
         <!--section1 메인 txt-->
-        <div class="section1-title-box">
+        <div class="section1-title-box w14">
             <div class="w14">
                 <div class="section1-title">
                     <div class="tit1">
@@ -56,15 +57,19 @@
             <div class="slide">
                 <div class="swiper-wrapper">
                     <!--상품 리스트 아이템-->
+                    {{#productList}}
                     <div class="swiper-slide card">
                         <img class="card-img-top" src="/images/prod_1.jpg" alt="Card image" style="width:100%">
                         <div class="card-body">
                             <a href="#" class="btn mb-20">장바구니 담기</a>
-                            <h4 class="card-title">당도선별 천혜향 1kg(4~6입)</h4>
+                            <!-- <h4 class="card-title">당도선별 천혜향 1kg(4~6입)</h4>-->
+                            <h4 class="card-title">{{name}}</h4>
+                            <!--상품설명-->
                             <p class="card-text text-secondary">부드러운 과육이 품은 상큼함</p>
-                            <p class="card-text price fw-600 ft-20">4,800원</p>
+                            <p class="card-text price fw-600 ft-20">{{price}} 원</p>
                         </div>
                     </div>
+                    {{/productList}}
 
                     <div class="swiper-slide card">
                         <img class="card-img-top" src="/images/prod_2.jpg" alt="Card image" style="width:100%">

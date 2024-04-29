@@ -5,6 +5,8 @@ import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
 public class ProductRequest {
+
+
     //상품 수정
     @Data
     public static class UpdateDTO{
@@ -32,4 +34,6 @@ public class ProductRequest {
                     .build();
         }
     }
+
+
 }
