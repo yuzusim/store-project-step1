@@ -1,9 +1,54 @@
-<br />
-<hr/>
-<div class="jumbotron text-center" style="margin-bottom: 0">
-    <p>Created by Cos</p>
-    <p>📞 010-2222-7777</p>
-    <p>🏴 부산 부산진구 XX동</p>
-</div>
+
+<!--푸터 시작-->
+<footer id="footer">
+    <!--justify-content-between-->
+    <div class="ft_in row w14">
+        <div class="f_logo col">
+            <h1><a href="">Logo</a></h1>
+            <!--<img src="./images/logo.png">-->
+            <ul class="mt-30">
+                <li>©DTO market. All rights reserved.</li>
+                <li style="color:darkgrey;">본 사이트는 상업적으로 사용하지 않습니다.</li>
+            </ul>
+        </div>
+        <div class="ft_info_w col">
+            <ul class="ft_info">
+                <li class="point-color fw-600">INFO</li>
+                <li class="mr-20">(주)트렌드를 이끌어가는 마켓</li>
+                <li>대표 : 김트렌드</li>
+                <li>개인정보보호책임자 : 김책임</li>
+                <li>사업자등록번 : 000-00-00000</li>
+                <li>통신판매업 : 제 0000-0000-0000 호</li>
+                <li>주소 : 부산 부산진구 중앙대로 749</li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul class="cs">
+                <li class="point-color fw-600">CS CENTER</li>
+                <li class="ft-30 mb-10 mt-10">고객센터 1544-8282</li>
+                <li>평일<span class="ml-20">AM 10:00 - PM 18:00</span></li>
+                <li>점심<span class="ml-20">PM 12:00 - PM 13:00</span></li>
+                <li>일요일, 공휴일 휴무</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--top 버튼-->
+    <button type="button" id="btn-top" class="btn-outline-mint">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i><span class=""></span>
+    </button>
+
+    <script>
+        $(function () {
+            $("#btn-top").on("click", function () {
+                $("html, body").animate({ scrollTop: 0 }, '500');
+                return false;
+            });
+        });
+    </script>
+
+</footer>
+<!--푸터 끝-->
+
 </body>
 </html>
