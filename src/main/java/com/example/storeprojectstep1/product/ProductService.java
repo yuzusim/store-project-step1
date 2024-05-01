@@ -1,5 +1,7 @@
 package com.example.storeprojectstep1.product;
 
+import com.example.storeprojectstep1.order.Order;
+import com.example.storeprojectstep1.order.OrderRepository;
 import jakarta.persistence.Query;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,7 @@ import java.util.List;
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
+
 
     //상품 삭제하기
     @Transactional

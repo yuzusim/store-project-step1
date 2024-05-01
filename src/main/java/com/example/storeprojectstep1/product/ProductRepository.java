@@ -14,6 +14,14 @@ import java.util.List;
 public class ProductRepository {
     private final EntityManager em;
 
+//    //상품 ID를 가진 모든 주문을 찾아 삭제하는 쿼리를 실행
+//    public void deleteProductById(int productId) {
+//        Query query = em.createQuery("delete from Order o where o.product.id = :productId");
+//        query.setParameter("productId", productId);
+//        query.executeUpdate();
+//    }
+
+    // 상품을 참조하는 모든 주문 삭제
     public void deleteById(int id) {
         Query query =
                 em.createQuery("delete from Product p where p.id = :id");

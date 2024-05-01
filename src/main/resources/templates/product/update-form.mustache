@@ -1,27 +1,29 @@
 {{> layout/header}}
 
-<div class="container w14 pt-100 pb-100" style="margin: 0 auto;">
-    <form action="/product/add" method="post" enctype="multipart/form-data">
-
+<!--상품 수정하기 페이지 시작-->
+<div class="container w14 sub-page" style="margin: 0 auto;">
+    <form action="/product/{{product.id}}/update" method="post" enctype="multipart/form-data">
         <div class="d-flex prodsav-W">
-            <!--상품 이미지 등록-->
+            <!--상품 이미지 수정 등록-->
             <div class="prodsave-L">
                 <div class="p-3 m-3">
                     <div class="row">
-                        <div class="d-flex justify-content-center align-items-center"
-                             style="width: 400px; height: 400px; border: 1px solid #ddd; color: #ddd; overflow: hidden"
+                        <div class="d-flex justify-content-center align-items-center saveImg"
+                             style=""
                              id="profilePreview">
-                            <b>사진을 등록해 주세요.</b>
+                            <img src="/upload/{{product.img}}" style="width: 100%">
+                            <!--<img class="card-img-top" src="/images/prod_2.jpg" alt="Card image" style="width:100%">-->
+
                         </div>
+                        <!-- 파일 업로드 입력 필드 -->
                         <input type="file" id="imageUpload" name="img"
-                               class="real-upload mx-auto d-block mt-2 w-50 h-50" accept="upload/*" required
-                               multiple>
+                               class="real-upload mx-auto d-block mt-2 w-50 h-50" accept="image/*">
                     </div>
                 </div>
             </div>
-            <!--상품 이미지 등록-->
+            <!--상품 이미지 수정 등록-->
 
-            <!--상품등록-->
+            <!-- 상품 정보 수정 -->
             <div class="prodsave-R ml-10">
                 <div class="d-flex mb-3 mt-3 row">
                     <table class="prod-info">
@@ -29,12 +31,7 @@
                         <tr>
                             <th>상품명</th>
                             <td>
-                                <input id="name" name="name" type="text" class="form-control"
-                                       placeholder="상품명을 적어주세요" style="width: 98%">
-                            </td>
-                            <td>
-                                <button type="button" onclick="nameSameCheck()"
-                                        class="btn btn-warning">상품중복체크</button>
+                                <input name="name" type="text" class="form-control" value="{{product.name}}" disabled>
                             </td>
                         </tr>
                         <!--상품명-->
@@ -42,9 +39,8 @@
                         <!--상품가격-->
                         <tr>
                             <th>상품가격</th>
-                            <td colspan="2">
-                                <input name="price" type="number" class="form-control price"
-                                       placeholder="상품 가격을 적어주세요" style="width: 100%">
+                            <td>
+                                <input name="price" type="number" class="form-control price" value="{{product.price}}">
                             </td>
                         </tr>
                         <!--상품가격-->
@@ -52,39 +48,36 @@
                         <!--상품수량-->
                         <tr>
                             <th>상품수량</th>
-                            <td colspan="2">
-                                <input name="qty" type="number" class="form-control col ml-5"
-                                       placeholder="상품 수량을 적어주세요">
+                            <td>
+                                <input name="qty" type="number" class="form-control price" value="{{product.qty}}">
                             </td>
                         </tr>
                         <!--상품수량-->
                     </table>
-
                     <div class="line" style="border-bottom:1px solid #ddd; margin: 50px auto"></div>
-                    <button type="submit" class="btn btn-primary btn-apply">상품등록완료</button>
-
+                    <button type="submit" class="btn btn-mint">상품수정완료</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
+<!--상품 수정하기 페이지 완료-->
 
 <script>
-
     $(document).ready(function () {
+        // 파일 업로드 입력 필드 변경 이벤트 핸들러
         $('#imageUpload').change(function (event) {
             if (this.files && this.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
+                    // 선택한 이미지를 미리보기로 표시
                     $('#profilePreview').html('<img src="' + e.target.result + '" style="max-width: 100%;">');
                 };
+                // 파일을 읽어오고 미리보기에 표시
                 reader.readAsDataURL(this.files[0]);
-                let fileName = this.files[0].name; // 파일 이름 가져오기
-                console.log(fileName); // 콘솔에 파일 이름 출력
             }
         });
     });
-
-
 </script>
+
 {{> layout/footer}}

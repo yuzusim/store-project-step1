@@ -53,46 +53,59 @@
         <div class="slide_wrap point w15">
             <div class="slide">
                 <div class="swiper-wrapper">
+                    <!--상품 리스트 아이템-->
+                    {{#productList}}
                     <div class="swiper-slide card">
                         <img class="card-img-top" src="/images/prod_2.jpg" alt="Card image" style="width:100%">
                         <div class="card-body">
-                            <a href="#" class="btn mb-20">장바구니 담기</a>
+                            <a href="/product/{{id}}" class="btn mb-20">상세보기</a>
                             <h4 class="card-title">대추 방울 토마토 750g</h4>
                             <p class="card-text text-secondary">믿고 먹을 수 있는 합리적인 가격</p>
                             <p class="card-text price fw-600 ft-20">9,900원</p>
                         </div>
                     </div>
-
-                    <div class="swiper-slide card">
-                        <img class="card-img-top" src="/images/prod_3.jpg" alt="Card image" style="width:100%;">
-                        <div class="card-body">
-                            <a href="#" class="btn mb-20">장바구니 담기</a>
-                            <h4 class="card-title">당도선별 성주 참외 1.5kg(4~7입)</h4>
-                            <p class="card-text text-secondary">뽀얀 과육이 담긴 시원한 단맛</p>
-                            <p class="card-text price fw-600 ft-20">17,900원</p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide card">
-                        <img class="card-img-top" src="/images/prod_4.jpg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <a href="#" class="btn mb-20">장바구니 담기</a>
-                            <h4 class="card-title">바나나 실속 2종</h4>
-                            <p class="card-text text-secondary">매일즐기는 달콤한 포만감</p>
-                            <p class="card-text price fw-600 ft-20">4,800원</p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide card">
-                        <img class="card-img-top" src="/images/prod_1.jpg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <a href="#" class="btn mb-20">장바구니 담기</a>
-                            <h4 class="card-title">당도선별 천혜향 1kg(4~6입)</h4>
-                            <p class="card-text text-secondary">부드러운 과육이 품은 상큼함</p>
-                            <p class="card-text price fw-600 ft-20">4,800원</p>
-                        </div>
-                    </div>
+                    {{/productList}}
                     <!--상품 리스트 아이템-->
+
+
+
+
+<!--                    &lt;!&ndash;상품 리스트 아이템&ndash;&gt;-->
+<!--                    <div class="swiper-slide card">-->
+<!--                        <img class="card-img-top" src="/images/prod_3.jpg" alt="Card image" style="width:100%;">-->
+<!--                        <div class="card-body">-->
+<!--                            <a href="#" class="btn mb-20">장바구니 담기</a>-->
+<!--                            <h4 class="card-title">당도선별 성주 참외 1.5kg(4~7입)</h4>-->
+<!--                            <p class="card-text text-secondary">뽀얀 과육이 담긴 시원한 단맛</p>-->
+<!--                            <p class="card-text price fw-600 ft-20">17,900원</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;상품 리스트 아이템&ndash;&gt;-->
+
+<!--                    &lt;!&ndash;상품 리스트 아이템&ndash;&gt;-->
+<!--                    <div class="swiper-slide card">-->
+<!--                        <img class="card-img-top" src="/images/prod_4.jpg" alt="Card image" style="width:100%">-->
+<!--                        <div class="card-body">-->
+<!--                            <a href="#" class="btn mb-20">장바구니 담기</a>-->
+<!--                            <h4 class="card-title">바나나 실속 2종</h4>-->
+<!--                            <p class="card-text text-secondary">매일즐기는 달콤한 포만감</p>-->
+<!--                            <p class="card-text price fw-600 ft-20">4,800원</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;상품 리스트 아이템&ndash;&gt;-->
+
+<!--                    &lt;!&ndash;상품 리스트 아이템&ndash;&gt;-->
+<!--                    <div class="swiper-slide card">-->
+<!--                        <img class="card-img-top" src="/images/prod_1.jpg" alt="Card image" style="width:100%">-->
+<!--                        <div class="card-body">-->
+<!--                            <a href="#" class="btn mb-20">장바구니 담기</a>-->
+<!--                            <h4 class="card-title">당도선별 천혜향 1kg(4~6입)</h4>-->
+<!--                            <p class="card-text text-secondary">부드러운 과육이 품은 상큼함</p>-->
+<!--                            <p class="card-text price fw-600 ft-20">4,800원</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;상품 리스트 아이템&ndash;&gt;-->
+
                 </div>
                 <!--swiper-button-->
                 <div class="swiper-button-next"></div>
@@ -100,6 +113,7 @@
                 <div class="swiper-pagination"></div>
                 <!--swiper-button-->
             </div>
+        </div>
     </section>
     <!--section2 상품 리스트-->
 
