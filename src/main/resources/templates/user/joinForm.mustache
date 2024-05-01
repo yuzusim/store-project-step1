@@ -1,44 +1,87 @@
 {{> layout/header}}
 
-<div class="container p-5">
+<div class="container sub-page">
 
     <!-- 요청을 하면 localhost:8080/join POST로 요청됨
     username=사용자입력값&password=사용자값&email=사용자입력값 -->
 
-    <div class="card" style="width:500px; margin: 0 auto;">
-        <div class="card-header"><b>회원가입을 해주세요</b></div>
-        <div class="card-body">
+    <div class="card" style="width:600px; margin: 0 auto;">
+        <div class="main_title">
+            <h2>회원가입</h2>
+        </div>
+
+        <!--가입하기 폼 박스-->
+        <div class="join-box">
+            <p>
+                <span class="point-color">*</span> 필수입력사항
+            </p>
             <form action="/join" method="post" onsubmit="return valid()">
-                <div class="mb-3">
-                    <input type="hidden" name="role" value="2">
-                    <div class="d-flex">
-                        <div>
-                            <input id="username" type="text" class="form-control" placeholder="Enter username"
+                <table class="join-table ft-18 mb-30">
+                    <!--개인 이름-->
+                    <tr>
+                        <th>이름<span class="point-color">*</span></th>
+                        <td>
+                            <input id="username" type="text" class="form-control text-secondary"
+                                   placeholder="이름을 입력하세요."
                                    name="username">
-                        </div>
-                        <div>
-                            <button type="button" onclick="usernameSameCheck()" class="btn btn-warning">아이디중복체크</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <input type="password" class="form-control" placeholder="Enter password" name="password">
-                </div>
-                <div class="mb-3">
-                    <input type="phone" class="form-control" placeholder="Enter phone" name="phone">
-                </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Enter email" name="email">
-                </div>
-                <div class="mb-3">
-                    <input type="address" class="form-control" placeholder="Enter address" name="address">
-                </div>
-                <button type="submit" class="btn btn-primary form-control">회원가입</button>
+                        </td>
+                        <!--아이디중복체크-->
+                        <td class="pl-10">
+                            <button type="button" onclick="usernameSameCheck()" class="btn">아이디중복체크</button>
+                        </td>
+                        <!--아이디중복체크-->
+                    </tr>
+                    <!--개인 이름-->
+
+                    <!-- 비밀번호 -->
+                    <tr>
+                        <th>비밀번호<span class="point-color">*</span></th>
+                        <td colspan="2">
+                            <input type="password" class="form-control" placeholder="비밀번호를 입력하세요." name="password">
+                        </td>
+                    </tr>
+                    <!-- 비밀번호 -->
+
+                    <!--전화번호-->
+                    <tr>
+                        <th>전화번호<span class="point-color">*</span></th>
+                        <td colspan="2">
+                            <input type="phone" class="form-control" placeholder="전화번호를 입력하세요." name="phone">
+                        </td>
+                    </tr>
+                    <!--전화번호-->
+
+                    <!--이메일-->
+                    <tr>
+                        <th>이메일<span class="point-color">*</span></th>
+                        <td colspan="2">
+                            <input type="email" class="form-control" placeholder="이메일을 입력하세요." name="email">
+                        </td>
+                    </tr>
+                    <!--이메일-->
+
+                    <!--주소-->
+                    <tr>
+                        <th>주소<span class="point-color">*</span></th>
+                        <td colspan="2">
+                            <input type="address" class="form-control" placeholder="주소를 입력하세요." name="address">
+                        </td>
+                    </tr>
+                    <!--주소-->
+                </table>
+                <!--가입하기버튼-->
+                <button type="submit" class="btn btn-mint form-control ft-18">가입하기</button>
+                <!--가입하기버튼-->
             </form>
         </div>
+        <!--가입하기 폼 박스-->
     </div>
 </div>
 
+<!--<tr>-->
+<!--    <th><span class="point-color">*</span></th>-->
+<!--    <td></td>-->
+<!--</tr>-->
 <script>
     let isSameCheck = false;
 

@@ -39,7 +39,7 @@
 #header {
     z-index: 1000;
     position: relative;
-    height: 85px;
+    height: 150px;
     position: absolute;
     top: 0;
     background: #fff;
@@ -107,47 +107,46 @@ nav{
     color: #fff !important;
 }
 
+.search-wrap{
+    width:50%; margin: 0 auto; align-items: center;
+}
 
 /*메인*/
 /*section1 메인이미지*/
 .section1{position:relative; _z-index:0; _top:0;}
 .section1-img .mv{
-    height: 80vh;
-    /*width: 100%; height: 80vh;*/
-    /*background-size: cover;*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: 50% 50%;*/
-    /*overflow:hidden;*/
+    height:800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    overflow:hidden;
 }
-.section1-img img{width: 100% !important;}
-/*.section1-img1 {background-image: url("./static/images/main_3.png");}*/
-/*.section1-img2 {background-image: url("../images/");}*/
-/*.section1-img3 {background-image: url("../images/");}*/
+.section1-img1{
+    background-image: url('/images/mv_4.jpg');
+    background-position: top 50% center;
+}
+.section1-img2{
+    background-image: url('/images/mv_3.jpg');
+}
+.section1-img3{
+    background-image: url('/images/mv_2.jpg');
+}
 
-.section1-title-box{
+/*section1 메인 txt*/
+    .section1-title-box{
     width: 100%;
-    position: absolute; top:0;  _top: 150px;
+    position: absolute; top:0;  left: 10%; _top: 150px;
     transform:translateY(-50%)
 }
 .section1-title {
     color: #fff;
     width: 100%; margin: 50% 0 0;
     text-align:left; height:auto; font-family: 'yg-jalnan';
-
 }
-.section1-title h2 {
-    font-family: 'yg-jalnan';
-    font-size: 42px; line-height: 1.3em; font-weight: 700;
-
-}
+.section1-title h2 {font-size: 52px;}
 .section1-title p{
-    font-size: 32px;
-    margin:30px 0 0; line-height:1.4em;
+    font-size: 32px; line-height:1.4em
 }
-/*.section1-title .tit1{text-align:center; padding:100px 0;}*/
-/*.section1-title .tit2{text-align:center; padding:100px 0;}*/
-/*.section1-title .tit3{text-align:center; padding:140px 0;}*/
-
 
 .section1-title .tit1{}
 .section1-title .tit1 span::before{
@@ -162,18 +161,6 @@ nav{
 .section1-title .tit1 span.dot_2::before{margin:0 100px;}
 .section1-title .tit1 span.dot_3::before{margin:0 100px;}
 .section1-title .tit1 span.dot_4::before{margin:0 100px;}
-
-.section1-title .tit2 h2{font-size: 102px;}
-.section1-title .tit2 p{font-size: 48px;}
-
-.section1-title .tit2 h2::after{
-    display:block;
-    content:'';
-    width:1100px; height:2px;
-    background:#fff; margin:20px auto 0;
-}
-
-.section1-title .tit3 mark{color:#ff0000; padding:20px;}
 
 
 .section1-title .btn{opacity:1; transition:all 0.3s ease; margin-top:70px;}
@@ -282,7 +269,7 @@ nav{
     opacity: 0.7;
     background:#fff;_color: #fff;
     padding: 10px 20px 0 0;
-    _border:none; _border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+    border:none; _border-bottom: 3px solid rgba(255, 255, 255, 0.8);
     _background:transparent;
 }
 /* 주석부분 지우지마세요
@@ -326,7 +313,7 @@ nav{
         width: 0;
     }
     100% {
-        width: 80px;
+        width: 150px;
     }
 }
 
@@ -371,6 +358,17 @@ nav{
 .card-img-top{height: 450px;}
 
 
+
+/*회원가입부분*/
+.join-table{}
+.join-table th {padding: 30px;}
+
+.join-box p{
+    border-bottom:1px solid #ddd;
+    text-align: end;
+    padding: 10px;
+}
+
 /*푸터*/
 #footer{
     font-size: 17px;
@@ -380,8 +378,8 @@ nav{
 
 #footer .f_logo h1 a {
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     background: url(../images/logo.png) no-repeat;
     background-size: cover;
     text-indent: -9999px;
@@ -415,12 +413,6 @@ nav{
     border-radius: 50px;
     transition: all .3s ease-in-out;
 }
-
-
-
-
-
-
 
 
 
