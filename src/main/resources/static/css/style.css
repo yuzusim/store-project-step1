@@ -1,4 +1,4 @@
-/*공통*/
+/*타이틀 공통*/
 .main_title{
     font-size: 28px;
     font-weight:500;
@@ -358,7 +358,6 @@ nav{
 .card-img-top{height: 450px;}
 
 
-
 /*회원가입부분*/
 .join-table{}
 .join-table th {padding: 30px;}
@@ -368,6 +367,20 @@ nav{
     text-align: end;
     padding: 10px;
 }
+
+/*sns가입 부분*/
+.sns-login-w{border-top:1px solid #ddd;}
+.sns-login-w button{color:#3c1e1e;}
+
+.login input{height: 65px;}
+.sns-btn-in{align-items: center; justify-content: center; margin:-10px 0 0 -40px;}
+.kakao-icon{
+    width: 50px;
+    height: 50px;
+    background: url(../images/kakao-icon.png) no-repeat;
+    background-size: cover;
+}
+
 
 /*푸터*/
 #footer{
@@ -395,6 +408,7 @@ nav{
     color: #fff;
     background: rgb(44, 180, 87);
 }
+
 
 #btn-top {
     border: none;

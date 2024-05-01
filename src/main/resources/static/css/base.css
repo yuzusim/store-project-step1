@@ -222,7 +222,6 @@ table {width: 100%; border: none;}
 .fw-700 {font-weight: 700;}
 .fw-800 {font-weight: 800;}
 
-
 :root{
     --white: #fff;
     --mint-color: #2cb457;
@@ -233,7 +232,10 @@ table {width: 100%; border: none;}
     --radius-6: 6px;
     --radius-12: 6px;
     --radius-20: 20px;
+    --btn-yellow:rgb(255, 235, 52);
 }
+
+.btn-yellow{background-color: var(--btn-yellow);}
 
 .point-color {color: var(--mint-color);}
 
@@ -253,5 +255,6 @@ table {width: 100%; border: none;}
 
 .btn-outline-mint:hover {font-weight: 600;}
 
+/*서브공통*/
 .sub-page{padding:200px 0;}
 
