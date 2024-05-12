@@ -11,6 +11,7 @@
                     <th>상품명</th>
                     <th>구매수량</th>
                     <th>상품가격</th>
+                    <th>총액</th>
                     <th>선택하기</th>
                 </tr>
                 {{#cartSaveList}}
@@ -27,6 +28,7 @@
                             {{orderQty}}
                         </td>
                         <td>{{price}}</td>
+                        <td class="product-total" data-price="{{price}}" data-qty="{{orderQty}}">0</td>
                         <td>
                             <input class="form-check-input product-checkbox item-check" type="checkbox" name="itemCheck" id="itemCheck-{{id}}" style="width:20px !important; margin: 0 auto">
                         </td>
@@ -41,19 +43,35 @@
 <script>
     let cartSaveList = [];
 
+    document.addEventListener("DOMContentLoaded", function() {
+        // 페이지 로드 시 모든 상품의 총액 계산
+        document.querySelectorAll('.product-total').forEach(function(item) {
+            const price = parseInt(item.dataset.price, 10);
+            const qty = parseInt(item.dataset.qty, 10);
+            const total = price * qty;
+            item.textContent = total.toLocaleString(); // 계산된 총액을 셀에 표시
+        });
+    });
+
     document.querySelector("#purchaseButton").addEventListener("click", function (e) {
         e.preventDefault(); // 기본 폼 제출을 방지
 
         let checkedCarts = [];
+        let totalAmount = 0; // 총액을 저장할 변수
 
         // 선택된 상품을 확인하고 리스트에 추가
         document.querySelectorAll(".item-check:checked").forEach(checkbox => {
             let cartId = checkbox.id.split('-')[1];
             let orderQty = document.querySelector(`#cart-${cartId} .cart-qty`).value;
+            let price = document.querySelector(`#cart-${cartId} td:nth-child(4)`).textContent; // 상품가격을 가져옴
+            let productTotal = parseInt(orderQty) * parseInt(price); // 구매수량과 상품가격을 곱하여 총액을 계산
+
+            totalAmount += productTotal; // 총액에 추가
 
             let checkedCart = {
                 cartId: cartId,
                 orderQty: orderQty,
+                productTotal: productTotal, // 계산된 총액
                 status: checkbox.checked ? true : false // 체크 여부에 따라 상태 설정
             };
 
@@ -61,6 +79,8 @@
         });
 
         console.log(checkedCarts);
+        console.log(`총액: ${totalAmount}`); // 총액 출력
+
 
         // AJAX 요청으로 선택된 상품을 서버로 전송
         $.ajax({
@@ -69,12 +89,14 @@
             contentType: 'application/json; charset=utf-8',
             type: 'POST'
         }).done((res) => {
-            alert(`결과: ${res}`);
+            alert(`${res}`); //결과
             location.href = "/order-save-form";
         }).fail((res) => {
             // 오류 처리
         });
     });
+
+
 </script>
 
 

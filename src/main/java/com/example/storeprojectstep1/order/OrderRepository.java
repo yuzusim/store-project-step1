@@ -5,12 +5,9 @@ import com.example.storeprojectstep1.cart.CartResponse;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Repository
@@ -41,6 +38,29 @@ public class OrderRepository {
 
 
 
+    //장바구니 담기(목록)
+    public List<Order> findByUserId(int id) {
+        Query query =
+                em.createQuery("SELECT o FROM Order o JOIN FETCH o.user u JOIN FETCH o.product p JOIN FETCH o.cart c WHERE u.id = :id ORDER BY o.id DESC", Order.class);
+        query.setParameter("id", id);
+        return query.getResultList();
+    }
+
+    //장바구니 담기(목록)
+//    public List<Cart> findByUserId(int id) {
+//        Query query =
+//                em.createQuery("SELECT c FROM Cart c JOIN FETCH c.user u JOIN FETCH c.product p WHERE u.id = :id ORDER BY c.id DESC", Cart.class);
+//        query.setParameter("id", id);
+//        return query.getResultList();
+//    }
+
+
+    //주문 목록보기 order/list
+    public List<Order> findAll() {
+        Query query =
+                em.createQuery("SELECT o FROM Order o ORDER BY o.id DESC", Order.class);
+        return query.getResultList();
+    }
 
     //주문서 확인
     public List<CartResponse.CartDTO> findByCartIdAndUserIdAndStatus(int userId) {
@@ -56,12 +76,7 @@ public class OrderRepository {
 
     }
 
-    //주문 목록보기 order/list
-    public List<Order> findAll() {
-        Query query =
-                em.createQuery("SELECT o FROM Order o ORDER BY o.id DESC", Order.class);
-        return query.getResultList();
-    }
+
 
 
 }

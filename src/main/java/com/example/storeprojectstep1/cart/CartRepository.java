@@ -83,4 +83,13 @@ public class CartRepository {
         query.setParameter("id", id);
         return query.getResultList();
     }
+
+    public Cart findByCartUserId(int id) {
+        Query query =
+                em.createQuery("select c from Cart c JOIN FETCH c.user u JOIN FETCH c.product p WHERE u.id = :user_id");
+        query.setParameter("user_id", id);
+        return (Cart) query.getSingleResult();
+    }
+
+
 }

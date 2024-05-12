@@ -1,6 +1,5 @@
 package com.example.storeprojectstep1.cart;
 
-import com.example.storeprojectstep1.order.Order;
 import com.example.storeprojectstep1.product.Product;
 import com.example.storeprojectstep1.user.User;
 import lombok.Data;

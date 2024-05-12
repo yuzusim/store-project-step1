@@ -31,6 +31,8 @@ public class Cart {
     @Column
     private Integer orderQty; //수량
 
+    //private Integer productTotal; //수량
+
     @Column
     private Boolean status; //주문, 취소
 
@@ -38,12 +40,15 @@ public class Cart {
     private Timestamp createdAt;
 
     @Builder
-    public Cart(int id, User user, Product product, int orderQty, Boolean status, Timestamp createdAt) {
+    public Cart(int id, User user, Product product, int orderQty, int productTotal, Boolean status, Timestamp createdAt) {
         this.id = id;
         this.user = user;
         this.product = product;
+        //this.productTotal = productTotal;
         this.orderQty = orderQty;
         this.status = status; // status 필드 초기화
         this.createdAt = createdAt;
     }
+
+
 }
